@@ -370,6 +370,7 @@ FocusScope {
                 verticalCenter: parent.verticalCenter
                 right: settingsButton.left; rightMargin: vpx(50)
             }
+            visible: false // Disabling until ready to implement
         }
 
         Image {
@@ -386,6 +387,7 @@ FocusScope {
                 verticalCenter: parent.verticalCenter
                 right: sysTime.left; rightMargin: vpx(50)
             }
+            visible: false // Disabling until ready to implement
         }
         
 
