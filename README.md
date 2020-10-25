@@ -4,6 +4,7 @@
 ![prosperoOS Pegasus theme](https://i.imgur.com/AlDRo9l.png)
 ![prosperoOS Pegasus theme](https://i.imgur.com/PiZGhgi.png)
 ![prosperoOS Pegasus theme](https://i.imgur.com/0YDTuzG.png)
+[![Image from Gyazo](https://i.gyazo.com/83424644941ef0a9d1342104bde6d079.gif)](https://gyazo.com/83424644941ef0a9d1342104bde6d079)
 
 ## prosperoOS theme for Pegasus Frontend
 
