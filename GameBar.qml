@@ -10,6 +10,7 @@ import "utils.js" as Utils
 FocusScope {
     id: root
 
+
     signal exitNav
     
     property alias currentIndex: gameNav.currentIndex
@@ -20,7 +21,7 @@ FocusScope {
     ListModel {
     id: gamesListModel
 
-        property var activeCollection: listRecent.games
+        property var activeCollection:  currentCollection!=-1 ? api.collections.get(currentCollection).games : api.allGames
 
         Component.onCompleted: {
             clear();
@@ -33,13 +34,16 @@ FocusScope {
         }
 
         function buildList() {
+            activeCollection.toVarArray().map(g => g.lastPlayed).sort((a, b) => a > b);
+            var gamesCounter = activeCollection.count > 10 ? 10 : activeCollection.count;
             append({
                 "name":         "Explore", 
                 "idx":          -1, 
                 "icon":         "assets/images/navigation/Explore.png",
                 "background":   ""
             })
-            for(var i=0; i<activeCollection.count; i++) {
+            for(var i=0; i<gamesCounter; i++) {
+                
                 append(createListElement(i));
             }/*
             append({
@@ -58,10 +62,10 @@ FocusScope {
         
         function createListElement(i) {
             return {
-                name:       listRecent.games.get(i).title,
+                name:       activeCollection.get(i).title,
                 idx:        i,
-                icon:       listRecent.games.get(i).assets.logo,
-                background: listRecent.games.get(i).assets.screenshots[0]
+                icon:       activeCollection.get(i).assets.logo,
+                background: activeCollection.get(i).assets.screenshots[0]
             }
         }
     }
